@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./index.css">
+<body>
+    <div id="wrapper">
+        <div class="top"></div>
+        <div class="backg"></div>
+        <div class="photo"></div>
+        <div class="merry"></div>
+        <div class="yun"></div>
+        <div class="ok"></div>
+        <div class="zhuangshi">
+            <div class="marry"></div>
+            <div class="oldman">
+                <div class="body"></div>
+                <div class="huzi"></div>
+                <div class="maozi"></div>
+                <div class="shou"></div>
+            </div>
+            <div class="doctor">
+                <div class="d-head"></div>
+                <div class="d-body"></div>
+                <div class="d-maozi"></div>
+            </div>
+            <div class="milu">
+                <div class="m-body"></div>
+                <div class="m-r"></div>
+                <div class="m-l"></div>
+            </div>
+            <div class="jiantou"></div>
+            <div class="jiantou2"></div>
+            <div class="jiantouback"></div>
+            <div class="jiantouback2"></div>
+        </div>
+        <div class="xuanxiangka">
+            <div class="touxiang"></div>
+            <div class="beijing"></div>
+            <div class="tosay"></div>
+        </div>
+        <div class="jiemian">
+            <div class="tree"></div>
+            <div class="house"></div>
+        </div>
+        <div class="jiemian1">
+            <div class="moon"></div>
+            <div class="house1"></div>
+        </div>
+        <div class="jiemian2">
+            <div class="tree2"></div>
+            <div class="house2"></div>
+        </div>
+    </div>
+    <div id="say">
+        <div class="s-content">
+            <div class="zidingyi">
+                <input color="green" id="a" type="text" placeholder="自定义圣诞祝福 最多N个字">
+            </div>
+            <div class="say1">
+                <input type="radio" name="o" value="新的一年也要好好加油哦">
+                <div>新的一年也要好好加油哦</div>
+            </div>
+            <div class="say2">
+                <input type="radio" name="o" value="我想要的很简单 时光还在 你还在">
+                <div>我想要的很简单 时光还在 你还在</div>
+            </div>
+            <div class="say3">
+                <input type="radio" name="o" value="想念的心很浓 想说的话很多">
+                <div>想念的心很浓 想说的话很多</div>
+            </div>
+            <div class="btn">
+                <input type="button" value="完成">
+            </div>
+        </div>
+    </div>
+    <div id="jieshu">
+        <div class="okok"></div>
+        <div class="fenxiang"></div>
+        <div class="tubiao">
+            <div class="tubiao1"></div>
+            <div class="tubiao2"></div>
+            <div class="tubiao3"></div>
+        </div>
+    </div>
+
+    <script src="../首页/jquery-3.2.1.min.js"></script>
+    <script>
+        var flag = 1;
+        $(".touxiang").on('click',function(){
+            if (flag == 1){//其实也可以吧头像放到一个DIV里然后用CSS3选择器选择，可以跟flag连接起来
+                $(".oldman").css("display","none").next().css("display","block");
+            }else if(flag == 2){
+                $(".doctor").css("display","none").next().css("display","block");
+            }else{
+                $(".milu").css("display","none").prev().prev().css("display","block");
+            }
+            flag++;
+            flag == 4 ? flag = 1 : '';
+
+        })
+        var flag1 = 1;
+        $(".beijing").on('click',function(){
+            if (flag1 == 1){//其实也可以吧头像放到一个DIV里然后用CSS3选择器选择，可以跟flag连接起来
+                $(".jiemian").css("display","none").next().css("display","block");
+            }else if(flag1 == 2){
+                $(".jiemian1").css("display","none").next().css("display","block");
+            }else{
+                $(".jiemian2").css("display","none").prev().prev().css("display","block");
+            }
+            flag1++;
+            flag1 == 4 ? flag1 = 1 : '';
+
+        })
+        $(".tosay").on('click',function(){
+            $("#say").css("display","block")
+        })
+        var ok = 0;
+        var saying = '';
+        $(".btn input").on("click",function(){
+            $("#say").css("display","none");
+            if($("#a").val()){
+                saying = $("#a").val()
+                ok = 1;
+            }else if($("input[name='o']:checked").val()){
+                saying = $("input[name='o']:checked").val()
+                ok = 1;
+            }else{
+                console.log("您还没选择祝福的话");
+            }
+            if(ok == 1) {
+                $(".ok").css({
+                    transform: "scale3d(1.5, 1.5, 100)",
+                    top: "-15vh" ,
+                    left: "-25vw"
+                })
+                $(".okok").css("z-index","100").on("click",function(){
+                    $(".s-content").css("display","none");
+                    $("#say").css("display","block");
+                    $(".ok").css({
+                        top: "-61vh" ,
+                        left: "-22vw"
+                    })
+                    $("#say").text("请点击右上角分享页面").css({"color":"#fff","padding-top":"11vh"});//没有那个箭头的图
+                    $(".fenxiang").on("click",function(){
+                        $(".s-content").css("display","block");
+                        $("#say").css("display","none");
+                        $(".ok").css("display","none");
+                        $(".xuanxiangka").css({background: "url('./fenx.png') no-repeat", top: "79vh",left: "2vw"}).on("click",function(){
+                            $(".xuanxiangka").css({
+                                background: "url('./fenx2.png') no-repeat", 
+                                backgroundSize: "98%",
+                                top: "79vh",
+                                left: "2vw",
+                            }).on("click",function(){
+                                $(".xuanxiangka").css("background","");
+                                $(".tubiao").css({
+                                    display: "flex",
+                                    zIndex: "100"
+                                })
+                            })
+                            $(".tubiao1").on("click",function(){
+                                location.reload()
+                            });
+                            $(".tubiao2").on("click",function(){
+                                location.href = "https://www.baidu.com/";
+                            })
+                            $(".tubiao3").on("click",function(){
+                                console.log(saying);
+                            })
+                        })
+                    })
+                    $(".okok").css("z-index","-1");
+                })
+            }
+        })
+    </script>
+</body>
+</html>

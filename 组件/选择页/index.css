@@ -1,0 +1,336 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+input, button{
+    outline: none;
+}
+#wrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+#wrapper div{
+    width: 100vw;
+    height: 100vh;
+    background-size: 100% 100%;
+}
+#wrapper .top{
+    background: url("./top.png");
+    background-size: 100% 100%;
+    z-index: 1;
+    position: absolute;
+}
+#wrapper .backg{
+    background: url("./选择页背景.png");
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+#wrapper .zhuangshi div{
+    background-size: 100% 100%; 
+    position: absolute;
+    top: 0;   
+}
+#wrapper .zhuangshi .oldman{
+    animation: downup 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.body{
+    background: url("./圣诞老人.png");
+}
+.huzi{
+    background: url("./圣诞老人帽子.png");
+}
+.maozi{
+    background: url("./圣诞老人胡子.png");
+}
+
+#wrapper .oldman .shou{
+    background: url("./圣诞老人手.png") ;
+    left:-5%;
+    background-size: 100% 100%;
+    top:-3%;
+    z-index: -1;
+    transform-origin: 33% 65%;
+    animation: head 1.5s linear alternate infinite 1.5s; 
+}
+.jiantou{
+    background: url("./箭头.png");
+    animation: lr 2s linear forwards;
+    
+}
+.jiantou2{
+    background: url("./箭头.png");
+    animation: rl 2s linear forwards;
+    transform: rotateY(180deg);
+}
+.jiantouback{
+    background: url("./箭头背景.png");
+    z-index: -1;
+    animation: lr 2s linear forwards;
+    
+}
+.jiantouback2{
+    background: url("./箭头背景.png");
+    animation: rl 2s linear forwards;
+    transform: rotateY(180deg);
+    z-index: -1;
+}
+.xuanxiangka{
+    background: url("./选项卡.png");
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.yun{
+    background: url("./云.png");
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    animation: updown 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.house{
+    background: url("./房子.png");
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    animation: downup 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.photo{
+    background: url("./背景拍照.png");
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    animation: opacity 1s linear 1.5s forwards;
+}
+.merry{
+    background: url("./merry christmas.png");
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    animation: updown 1s linear;
+}
+.tree{
+    background: url("./树.png");
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    animation: updown 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.ok{
+    background: url("./ok.png");
+    position: absolute;
+    top: 0;
+    animation: ok 1.5s linear;
+}
+@keyframes updown{
+    from{
+        top: -30vh;
+    }
+}
+@keyframes downup{
+    from{
+        top: 60vh;
+    }
+}
+@keyframes opacity{
+    to{
+        opacity: 1;
+    }
+}
+@keyframes lr{
+    from{
+        left:0;
+    }
+    to{
+        left:20vw;
+    }
+}
+@keyframes rl{
+    from{
+        left:0;
+    }
+    to{
+        left:-20vw;
+    }
+}
+@keyframes ok{
+    from{
+        left: 30vh;
+    }
+    to{
+        left: 0;
+    }
+}
+@keyframes head{
+    to{
+        transform: rotate(10deg)
+    }
+}
+.xuanxiangka {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: row;
+}
+#wrapper .xuanxiangka div{
+    height: 20%;
+    order: 1;
+    align-self: flex-end;
+}
+.doctor{
+    display: none;
+    animation: downup 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.d-head{
+    background: url("./医生手.png");
+}
+.d-body{
+    background: url("./医生.png");
+}
+.d-maozi{
+    background: url("./医生帽子.png");
+}
+.milu{
+    animation: downup 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    display: none;
+}
+.m-body{
+    background: url("./麋鹿.png");
+}
+.m-r{
+    background: url("./麋鹿右耳.png");
+}
+.m-l{
+    background: url("./麋鹿左耳.png");
+}
+#wrapper .moon{
+    background: url("./选择页1-2_iPhone_assets/云与月亮.png") no-repeat;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    background-size: contain;
+    animation: updown 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#wrapper .house1{
+    background: url("./选择页1-2_iPhone_assets/树与房顶.png");
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    background-size: contain;
+    animation: downup 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#wrapper .tree2{
+    background: url("./选择页1-3_iPhone_assets/棕榈树@2x.png") no-repeat;
+    z-index: -1;
+    position: absolute;
+    top: 11vh;
+    background-size: contain;
+    animation: updown 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+#wrapper .house2{
+    background: url("./选择页1-3_iPhone_assets/背景@2x.png") no-repeat;
+    z-index: -1;
+    position: absolute;
+    top: 0vh;
+    margin-top: 56.5vh;
+    background-size: contain;
+    animation: downup 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.jiemian1{
+    display: none;
+    position: absolute;
+    top: 0;
+}
+.jiemian2{
+    display: none;
+}
+#say{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    z-index: 100;
+}
+#say .s-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;;
+    transform: translate(-50%,-61%)
+}
+#say div{
+    color: #fff;
+    display: inline-block;
+}
+.say1, .say2, .say3{
+    margin: 4% 3%;
+}
+.say1 div, .say2 div, .say3 div{
+    transform: translateX(3%);
+}
+#say .zidingyi{
+    display: block;
+}
+#say .zidingyi input{
+    padding: 2vh 20vw;
+    border-radius: 10px;
+}
+#say .btn{
+    display: block;
+    text-align: center;
+}
+#say .btn input{
+    border-radius: 10px;
+    background: rgb(243, 193, 60);
+    height: 6vh;
+    width: 27vw;
+    font-weight: 700;
+    border: none;
+    font-size: 16px;
+    color:rgb(86,48,8);
+    margin-top: 5%;
+}
+#jieshu .okok{
+    position: absolute;
+    height: 16vh;
+    width: 32vw;
+    top: 64vh;
+    left: 68vw;
+}
+#jieshu .fenxiang{
+    height: 5.5vh;
+    width: 10vw;
+    position: absolute;
+    top: 5.5vh;
+    right: 0;
+    z-index: 100;
+}
+#jieshu .tubiao{
+    width: 100vw;
+    height: 20vh;
+    position: absolute;
+    top: 80vh;
+    display: none;
+    overflow: hidden;
+}
+#jieshu .tubiao div{
+    flex: 1;
+}
+.tubiao1{
+    background: url("./结束页面_iPhone_assets/还没拍够@2x.png") no-repeat;
+    background-size: contain;
+}
+.tubiao2{
+    background: url("./结束页面_iPhone_assets/得圣诞大礼@2x.png") no-repeat;
+    background-size: contain;
+}
+.tubiao3{
+    background: url("./结束页面_iPhone_assets/送祝福@2x.png") no-repeat;
+    background-size: contain;
+}
